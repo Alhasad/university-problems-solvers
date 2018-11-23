@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 '''
-        Obtiene la matriz ingresada.
+Obtiene la matriz ingresada.
 '''
 def main():
     # try-except en caso que algún dato ingresado sea inválido o erróneo.
@@ -16,16 +16,16 @@ def main():
         matriz = []
 
         while i < n:
-	    # Lista donde se guardará los datos de tipo "string".
+            # Lista donde se guardará los datos de tipo "string".
             str_filaActual = []
 
-	    # Ingreso de la fila en tipo "string".
+            # Ingreso de la fila en tipo "string".
             str_fila = raw_input("-> Fila " + str(i + 1) + ": ")
 
-	    # Se dividen la cadena ingresada con los datos respecto a los espacios.
+            # Se dividen la cadena ingresada con los datos respecto a los espacios.
             str_filaActual = str_fila.split(" ")
 
-	    # Se convierten los datos de tipo "string" en "float".
+            # Se convierten los datos de tipo "string" en "float".
             filaActual = [float(x) for x in str_filaActual]
 
             if len(filaActual) == n:
@@ -35,8 +35,7 @@ def main():
             else:
                 print ("El número de valores dados no coinciden con la dimensión de la matriz.")
 
-        return matriz
+            return matriz
     except:
-	print ("")
+        print ("")
         print ("Valor inválido!")
-
