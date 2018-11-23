@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
-import darAnchoDeConsola 
+import darAnchoDeConsola
 
 '''
 	Muestra las opciones disponibles.
@@ -37,5 +37,3 @@ def tomarOpcion():
     print ('~' * anchoDeConsola)
     opcion = int(input("Opción: "))
     return opcion
-
-

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
 '''
@@ -55,7 +55,7 @@ def main():
 		argumento = obtenerArgumento()
 		comienzo = obtenerComienzo()
 		error = obtenerTolerancia()
-
+		print(argumento)
 		# Se define la función.
 		f = definirFuncion("f(x) = " + argumento)
 

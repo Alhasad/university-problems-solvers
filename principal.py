@@ -1,4 +1,4 @@
-#!/usr/local/lib/python2.7
+#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
 import sys
