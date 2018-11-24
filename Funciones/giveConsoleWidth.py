@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 '''
-        Devuelve el ancho de la consola activa
+        Returns width of the active console.
 '''
 def main():
     width = 0
