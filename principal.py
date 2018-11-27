@@ -13,31 +13,38 @@ import findRootEquations
 	Main method of the whole app.
 '''
 def main():
-    introduction.show()
+	options = {"Linear algebra":
+	[[1.1, "Matrix determinant", "findDeterminantMatrix"]],
+	"Calculus":
+	[[2.1, "Find roots of functions", "findRootEquations"]],
+	"Dynamics of mechanical systems":
+	[[3.1, "Undamped systems", ""]],
+	"Mechanics of deformable solids":
+	[[4.1, "Deflection of beams", ""]]}
 
-    # Loop que ejecuta la opción ingresada y se devuelve.
-    while True:
-        # Loop que se asegura que la opción ingresada exista.
-        while True:
-            option = introduction.takeOption()
+	introduction.show(options)
 
-            if option == 1.1:
-                break
-            else:
-                print ('*' + centerText.main('Invalid entry!', 0 ) + '*')
+	# Loop that iteratively  executes the chosen option.
+	while True:
+		# Loop that makes sure the chosen option exists.
+		while True:
+			option = introduction.takeOption()
 
-        print ("")
+			if option == 1.1:
+				break
+			else:
+				print ('*' + centerText.main('Invalid entry!', 0 ) + '*')
 
-        # Condiciones para la ejecución de las optiones.
-        if option == 1.1:
-            findRootEquations.main()
-        elif option == 100:
-            exit()
+		print ("")
 
-        print ("")
+		# Condiciones para la ejecución de las optiones.
+		if option == 1.1:
+			findRootEquations.main()
+		elif option == 100:
+			exit()
 
-'''
-	Executes the app.
-'''
+print ("")
+
 if __name__ == "__main__":
-    main()
+	""" Executes the app """
+	main()
