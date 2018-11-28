@@ -18,12 +18,12 @@ def show(options):
 	print ('')
 	cont = 1
 
-	for key, listOfLists in options.items():
+	for key, value in options.iteritems():
 		print( str(cont) + ". " + key + ".")
-		for list in listOfLists:
+		for list in value:
 			print('\t' + str(list[0]) + ". " + list[1] + ".")
 
-			cont += 1
+		cont += 1
 
 	print ("")
 
