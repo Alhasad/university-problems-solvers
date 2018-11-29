@@ -9,12 +9,21 @@ import introduction
 import centerText
 import findRootEquations
 import findDeterminantMatrix
+import multiplyMatrices
 
 '''
 	Main method of the whole app.
 '''
 def main():
-	options = {"Linear algebra":[[2.1, "Matrix determinant", "findDeterminantMatrix"]], "Calculus":[[1.1, "Find roots of functions", "findRootEquations"]], "Dynamics of mechanical systems":[[3.1, "Undamped systems", ""]], "Mechanics of deformable solids":[[4.1, "Deflection of beams", ""]]}
+	options = {"Linear algebra":
+	[[2.1, "Matrix determinant", "findDeterminantMatrix"],
+	 [2.2, "Multiply matrices", "multiplyMatrices"]],
+	"Calculus":
+	[[1.1, "Find roots of functions", "findRootEquations"]],
+	"Dynamics of mechanical systems":
+	[[3.1, "Undamped systems", ""]],
+	"Mechanics of deformable solids":
+	[[4.1, "Deflection of beams", ""]]}
 
 	introduction.show(options)
 

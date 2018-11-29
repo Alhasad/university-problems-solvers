@@ -27,7 +27,7 @@ def det(matrix, mul):
 		return total
 
 def main():
-	""" Main function """
+	""" Main method """
 	matrix = obtainSquareMatrix.main()
 	print ("")
 

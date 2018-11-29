@@ -4,7 +4,9 @@
 '''
         Returns width of the active console.
 '''
+
 def main():
+    """ Main method """
     width = 0
     try:
         import struct, fcntl, termios

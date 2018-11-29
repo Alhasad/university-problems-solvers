@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
-import giveConsoleWidth
-
 '''
 	Shows complete introduction of the program.
 '''
+import giveConsoleWidth
 
 def show(options):
 	""" Shows the available options of the program """

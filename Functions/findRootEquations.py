@@ -87,7 +87,7 @@ def obtainMaxIterations():
 	return maxIterations
 
 def main():
-	""" Main method of the program """
+	""" Main method """
 	# Definition of essential parameters.
 	method = "N"
 	while True:
