@@ -8,6 +8,7 @@ sys.path.insert(0, "/home/camilo/Documentos/Proyectos/university-problems-solver
 import introduction
 import centerText
 import findRootEquations
+import findDeterminantMatrix
 
 '''
 	Main method of the whole app.
@@ -19,7 +20,7 @@ def main():
 
 	listOfAvailableOptions = []
 	# Loop that finds all the available options.
-	for key, value in options.iteritems():
+	for value in options.itervalues():
 		for list in value:
 			listOfAvailableOptions.append(list[0])
 

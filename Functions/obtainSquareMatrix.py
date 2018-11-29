@@ -18,7 +18,7 @@ def main():
         while i < n:
             str_presentRow = []
 
-            str_row = raw_input("-> row " + str(i + 1) + ": ")
+            str_row = raw_input("-> Row #" + str(i + 1) + ": ")
 
             str_presentRow = str_row.split(" ")
 
@@ -30,7 +30,7 @@ def main():
             else:
                 print ("The number of given values is different from the matrix dimension!")
 
-            return matriz
+        return matrix
     except:
         print ("")
         print ("Invalid entry!")

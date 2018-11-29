@@ -1,42 +1,36 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
-import obtainSquareMatrix
-
 '''
 	Finds the determinant of a matrix.
 '''
+import obtainSquareMatrix
 
-def minor(matrix, i):
-	""" Finds the minor of a matrix given a row i. """
-    n = len(matrix)
-    minor = []
-    minor = matrix.copy()
-    row = i//n
-    col = i%n - 1
-    del minor[row] # Deletes the first row
-    for j in list(range(len(minor))): # Deletes column i
-        recover_row = list(matrix[j])
-        del minor[j][col]
-        matrix[j] = recover_row
-    return minor
-
-def det(A):
-    """ Recursive function to find determinant """
-    if len(A) == 1:
-        return A[0][0]
-    else:
-        determinant = 0
-        for x in list(range(len(A))): # Iterates along first row finding cofactors
-            determinant += A[0][x] * (-1)**(2 + x) * det(minor(A, x)) # Adds successive elements times their cofactors
-
-        return determinant
+def det(matrix, mul):
+	""" Recursive function to find the determinant of the given matrix """
+	width = len(matrix)
+	if width == 1:
+		return mul * matrix[0][0]
+	else:
+		sign = -1
+		total = 0
+		for i in range(width):
+			m = []
+			for j in range(1, width):
+				buff = []
+				for k in range(width):
+					if k != i:
+						buff.append(matrix[j][k])
+				m.append(buff)
+			sign *= -1
+			total += mul * det(m, sign * matrix[0][i])
+		return total
 
 def main():
 	""" Main function """
-    matrix = obtainSquareMatrix.main()
-    print ("")
+	matrix = obtainSquareMatrix.main()
+	print ("")
 
-    # In case an error occured obtaining the matrix.
-    if matrix is not None:
-        print ("The determinant is = " + det(matrix))
+	# In case an error occured obtaining the matrix.
+	if matrix is not None:
+		print ("The determinant is = " + str(det(matrix, 1)))

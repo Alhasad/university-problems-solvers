@@ -6,24 +6,16 @@
 '''
 from random import randint
 
-'''
-Calculates the derivative of a function using finite difference method.
-'''
-def derivative(f):
-    def compute(x, dx):
-        return (f(x+dx) - f(x))/dx
-    return compute
-
-'''
-Finds the root a function using Newton's method.
-'''
-def findRootNewton(f, x, tolerance, maxIterations, dx=0.00000001):
-	df = derivative(f)
+def findRootNewton(argument, startPoint, tolerance, maxIterations):
+	"""	Finds the root a function using Newton's method """
+	dx = 0.00000001
+	x = startPoint
 	iterations = 1
 
 	# Newton's method.
 	while iterations < maxIterations:
-		x1 = x - f(x)/df(x, dx)
+		df = (f(x+dx, argument) - f(x, argument))/dx # Derivative of the function in x.
+		x1 = x - f(x, argument)/df
 		t = abs(x1 - x)
 		if t < tolerance:
 			break
@@ -31,36 +23,30 @@ def findRootNewton(f, x, tolerance, maxIterations, dx=0.00000001):
 		iterations += 1
 	return x
 
-'''
-Evaluates the function in x.
-'''
 def f(x, argument):
-    return eval(argument)
+	""" Evaluates the function in x """
+	return float(eval(argument))
 
-'''
-Obtains the argument of the function to evaluate.
-'''
 def obtainArgument():
+	""" Obtains the argument of the function to evaluate """
 	argument = ""
-	testNumber = random.randint(0, 1000)
+	testNumber = randint(0, 1000)
 	while True:
 		str_value = raw_input("f(x) = ")
 		try:
-			foo = f(testNumber, argument)
+			foo = f(testNumber, str_value)
 			argument = str_value
 			break
 		except:
 			print("Invalid entry!")
 	return argument
 
-'''
-Obtains the start point for finding the root.
-'''
 def obtainStartPoint():
+	""" Obtains the start point for finding the root """
 	startPoint = 0.1
 	while True:
 		str_value = raw_input("Start point (default: 0.1) = ")
-		if value == "":
+		if str_value == "":
 			break
 		else:
 			try:
@@ -70,14 +56,12 @@ def obtainStartPoint():
 				print("Invalid entry!")
 	return startPoint
 
-'''
-Obtains the required tolerance for finding the root.
-'''
 def obtainTolerance():
+	""" Obtains the required tolerance for finding the root """
 	tolerance = 0.00001
 	while True:
 		str_value = raw_input("Tolerance (default: 0.00001) = ")
-		if value == "":
+		if str_value == "":
 			break
 		else:
 			try:
@@ -87,14 +71,12 @@ def obtainTolerance():
 				print("Invalid entry!")
 	return tolerance
 
-'''
-Obtains the number of desired iterations to run.
-'''
 def obtainMaxIterations():
+	""" Obtains the number of desired iterations to run """
 	maxIterations = 100000
 	while True:
 		str_value = raw_input("Number of iterations (default: 100000) = ")
-		if value == "":
+		if str_value == "":
 			break
 		else:
 			try:
@@ -104,10 +86,8 @@ def obtainMaxIterations():
 				print("Invalid entry!")
 	return maxIterations
 
-'''
-Main method of the program.
-'''
 def main():
+	""" Main method of the program """
 	# Definition of essential parameters.
 	method = "N"
 	while True:
@@ -126,17 +106,14 @@ def main():
 	error = obtainTolerance()
 	maxIterations = obtainMaxIterations()
 
-	# Definition of function.
-	f = argument
-
 	print("")
 
 	try:
 		if method == "N":
-			root = findRootNewton(f, start, tolerance, maxIterations)
+			root = findRootNewton(argument, start, error, maxIterations)
+
+		# Result.
+		print("--> The closest root to " + str(start) + " is = " + str(root))
 	except:
 		print("Oops! Something went wrong.")
 		print("Either the function is not continous or it doesn't have a root near the start point.")
-
-	# Result.
-	print("--> The closest root to " + str(start) + " is = " + str(root))
