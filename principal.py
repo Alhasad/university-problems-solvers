@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
+'''
+	Main method of the whole app.
+'''
 import sys
 import os
 sys.path.insert(0, "/home/camilo/Documentos/Proyectos/university-problems-solvers/Functions")
@@ -11,9 +14,6 @@ import findRootEquations
 import findDeterminantMatrix
 import multiplyMatrices
 
-'''
-	Main method of the whole app.
-'''
 def main():
 	options = {"Linear algebra":
 	[[2.1, "Matrix determinant", "findDeterminantMatrix"],
