@@ -6,7 +6,6 @@
 '''
 import sys
 from os import system, name
-sys.path.insert(0, "/home/camilo/Documentos/Proyectos/university-problems-solvers/Functions")
 
 import introduction
 import centerText
