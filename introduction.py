@@ -20,9 +20,7 @@ def show(options):
 	for key, value in options.iteritems():
 		print( str(cont) + ". " + key + ".")
 		for list in value:
-			indicator = str(cont) + str(list[0])
-			print('\t' + indicator + ". " + list[1] + ".")
-			list[0] = float(indicator)
+			print('\t' + str(list[0]) + ". " + list[1] + ".")
 
 		cont += 1
 

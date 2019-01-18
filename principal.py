@@ -25,17 +25,28 @@ def main():
 	""" Main method """
 
 	options = {"Linear algebra":
-	[[2.1, "Matrix determinant", "findDeterminantMatrix"],
-	 [2.2, "Multiply matrices", "multiplyMatrices"]],
+	[[.1, "Matrix determinant", "findDeterminantMatrix"],
+	 [.2, "Multiply matrices", "multiplyMatrices"]],
 	"Calculus":
-	[[1.1, "Find roots of functions", "findRootEquations"]],
+	[[.1, "Find roots of functions", "findRootEquations"]],
 	"Dynamics of mechanical systems":
-	[[3.1, "Undamped systems", ""]],
+	[[.1, "Undamped systems", ""]],
 	"Mechanics of deformable solids":
-	[[4.1, "Deflection of beams", ""]],
+	[[.1, "Deflection of beams", ""]],
 	"Aditional options":
-	[[5.1, "Quit", "exit"]]}
+	[[.1, "Quit", "exit"]]}
+
+	# Parsing of the dictionary.
+	cont = 1
+	for key, value in options.iteritems():
+		for list in value:
+			indicator = cont + list[0]
+			list[0] = indicator
+
+		cont += 1
+
 	print options
+
 	listOfAvailableOptions = []
 	# Loop that finds all the available options.
 	for value in options.itervalues():
