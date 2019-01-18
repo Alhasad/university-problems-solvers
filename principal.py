@@ -35,7 +35,7 @@ def main():
 	[[4.1, "Deflection of beams", ""]],
 	"Aditional options":
 	[[5.1, "Quit", "exit"]]}
-
+	print options
 	listOfAvailableOptions = []
 	# Loop that finds all the available options.
 	for value in options.itervalues():
